@@ -69,7 +69,7 @@ source a.sh
 . a.sh
 ```
 
-`du` - data usage
+`du` - disk usage
 
 ```bash
 du -h <filename>
@@ -77,6 +77,8 @@ du -h <filename>
 # -s is subdirectory excluded
 # -a is all
 ```
+
+`df` - disk free
 
 `su` - switch user
 
