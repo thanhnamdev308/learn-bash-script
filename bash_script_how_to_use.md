@@ -78,7 +78,7 @@ du -h <filename>
 # -a is all
 ```
 
-`df` - disk free, same syntax as __du__
+`df` - disk free, same syntax as `du`
 
 `su` - switch user
 
