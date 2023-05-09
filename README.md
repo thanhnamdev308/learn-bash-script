@@ -82,6 +82,10 @@ du -h <filename>
 `df` - disk free, same syntax as `du`
 
 `su` - switch user
+```bash
+sudo su <username>
+# If you do sudo su only, you will switch to root user.
+```
 
 `chmod` - change user permission
 ```bash
