@@ -43,6 +43,7 @@ rm -r <directory>
 `find` - find files, directories
 ```bash
 find <filename>
+# By using the "-exec" other UNIX commands can be executed on files or folders found.
 ```
 
 `echo` - display
@@ -113,8 +114,20 @@ sudo /opt/McAfee/ens/esp/init/mfeespd-control.sh stop
 
 `ps` - task management on Linux
 ```bash
+ps -e  # print out all processes running in the system
+ps -ef  # print the task with the PID of the task parent and the UID running the task
 
+# Information get from command:
+# PID: Process ID
+# TTY (Teletypewriter): The name of the terminal that executes the command
+# TIME: CPU time needed to process the above process in minutes and seconds
+# CMD: Name of the command that started the processs operating system
+# UID: Username running the task
+# PPID (Parent PID): ID of the task's parent
+# C: Number of CPU cycles used by each task
+# STIME: The time the process starts
 ```
+
 # Work with multiple user
 ```bash
 sudo adduser <username>  # add new user
