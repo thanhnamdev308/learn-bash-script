@@ -110,6 +110,11 @@ sudo /opt/McAfee/ens/tp/init/mfetpd-control.sh stop
 sudo /opt/McAfee/ens/esp/init/mfeespd-control.sh stop
 ```
 `ln` - create softlink
+
+`ps` - task management on Linux
+```bash
+
+```
 # Work with multiple user
 ```bash
 sudo adduser <username>  # add new user
