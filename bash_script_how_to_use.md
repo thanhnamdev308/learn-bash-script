@@ -153,9 +153,17 @@ sudo umount /mnt/<foldername>  # unmount the folder
 More usecase at: https://phoenixnap.com/kb/sshfs
 
 
-Copy file from remote filesystem using scp
+Copy file from remote filesystem using scp (secure copy)
 ```bash
+# Copy file from remote to local
 scp remote_username@10.10.0.2:/remote-path/file.txt /local-path/directory
+
+# Copy file from local to remote
+scp file.txt remote_username@10.10.0.2:remote-path/
+
+# Example:
+scp file1 root@10.20.30.40:/tmp
+scp root@10.20.30.40:/tmp /home/ec2-user/
 ```
 
 On Windows:
