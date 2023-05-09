@@ -18,7 +18,7 @@ For example, if a script named `myscript.sh` has the `#!/bin/sh` shebang at the 
 ```bash
 ./myscript.sh
 ```
-## Is it same to #!/bin/bash ?
+### Is it same to #!/bin/bash ?
 In most case, yes.
 
 One reason to use `#!/bin/bash` instead of `#!/bin/sh` is if the script requires features that are not available in sh, such as arrays or certain types of command substitution.
@@ -43,6 +43,7 @@ rm -r <directory>
 `find` - find files, directories
 ```bash
 find <filename>
+# By using the "-exec" other UNIX commands can be executed on files or folders found.
 ```
 
 `echo` - display
@@ -69,7 +70,7 @@ source a.sh
 . a.sh
 ```
 
-`du` - data usage
+`du` - disk usage
 
 ```bash
 du -h <filename>
@@ -77,6 +78,8 @@ du -h <filename>
 # -s is subdirectory excluded
 # -a is all
 ```
+
+`df` - disk free, same syntax as `du`
 
 `su` - switch user
 
@@ -108,6 +111,23 @@ sudo /opt/McAfee/ens/tp/init/mfetpd-control.sh stop
 sudo /opt/McAfee/ens/esp/init/mfeespd-control.sh stop
 ```
 `ln` - create softlink
+
+`ps` - task management on Linux
+```bash
+ps -e  # print out all processes running in the system
+ps -ef  # print the task with the PID of the task parent and the UID running the task
+
+# Information get from command:
+# PID: Process ID
+# TTY (Teletypewriter): The name of the terminal that executes the command
+# TIME: CPU time needed to process the above process in minutes and seconds
+# CMD: Name of the command that started the processs operating system
+# UID: Username running the task
+# PPID (Parent PID): ID of the task's parent
+# C: Number of CPU cycles used by each task
+# STIME: The time the process starts
+```
+
 # Work with multiple user
 ```bash
 sudo adduser <username>  # add new user
@@ -133,9 +153,17 @@ sudo umount /mnt/<foldername>  # unmount the folder
 More usecase at: https://phoenixnap.com/kb/sshfs
 
 
-Copy file from remote filesystem using scp
+Copy file from remote filesystem using scp (secure copy)
 ```bash
+# Copy file from remote to local
 scp remote_username@10.10.0.2:/remote-path/file.txt /local-path/directory
+
+# Copy file from local to remote
+scp file.txt remote_username@10.10.0.2:remote-path/
+
+# Example:
+scp file1 root@10.20.30.40:/tmp
+scp root@10.20.30.40:/tmp /home/ec2-user/
 ```
 
 On Windows:
