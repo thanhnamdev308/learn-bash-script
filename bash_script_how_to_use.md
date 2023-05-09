@@ -110,7 +110,18 @@ whereis g++
 sudo /opt/McAfee/ens/tp/init/mfetpd-control.sh stop
 sudo /opt/McAfee/ens/esp/init/mfeespd-control.sh stop
 ```
-`ln` - create softlink
+`ln` - create link (softlink or hardlink)
+```bash
+ln -s <source_file> <destination_file>  # create Soft link
+# Soft link is used as Shortcut file.
+# Size of link file is equal to number of characters in the name of the original file.
+# If original file is deleted, link is broken and data is lost.
+
+ln <source_file> <destination_file>  # create Hard link
+# Hard link is used as Backup file.
+# Size of link file is equal to the size of the original file.
+# If original file is deleted then data is saved.
+```
 
 `ps` - task management on Linux
 ```bash
@@ -126,6 +137,18 @@ ps -ef  # print the task with the PID of the task parent and the UID running the
 # PPID (Parent PID): ID of the task's parent
 # C: Number of CPU cycles used by each task
 # STIME: The time the process starts
+```
+
+`wget` - download the content of a web page or download files
+
+`sed` - find and replace words in files with the word required to be in the output (it will only modify the output, no change in the origin file)
+```bash
+# Example:
+sed 's/old_text/new_text/' file_name
+sed 's/old_text/new_text/g' file_name
+sed -l 's/old_text/new_text/' file_name
+sed -n '5,10p' file_name
+sed '10,20d' file_name
 ```
 
 # Work with multiple user
