@@ -10,7 +10,7 @@ for file in $FILE_LIST; do
     echo "Testing: $file"
     if [ "$file" = "one" ]; then
         origin_data=$(cat $TEST_PATH/$file)
-        echo "abc" > $TEST_PATH/$file && cat $TEST_PATH/$file | grep "abc" > /dev/null
+        echo "abc" > $TEST_PATH/$file && cat $TEST_PATH/$file | grep "abc"
         if [ $? -ne 0 ]; then
             echo "FAILED: output not as expected, expected is $EXPECTED_OUTPUT"
             TEST_FAILED="true"
@@ -26,7 +26,7 @@ for file in $FILE_LIST; do
             echo "PASSED: output is as expected"
         fi
     else
-        echo "xyz" > $TEST_PATH/$file && cat $TEST_PATH/$file | grep "xyz" > /dev/null
+        echo "xyz" > $TEST_PATH/$file && cat $TEST_PATH/$file | grep "xyz"
         if [ $? -ne 0 ]; then
             echo "FAILED: output not as expected, expected is $EXPECTED_OUTPUT"
             TEST_FAILED="true"
